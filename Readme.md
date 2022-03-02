@@ -2,7 +2,7 @@
 
 Impossi-Wordle is a Wordle clone that dynamically changes the target word to make it more difficult to guess the correct word. Good Luck.
 
-You can play by clicking the link here.
+You can play by clicking the link [here](https://bart1259.github.io/Impossi-Wordle/).
 
 ## Contributors
 
