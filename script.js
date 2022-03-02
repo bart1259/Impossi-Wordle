@@ -14,8 +14,9 @@ $(document).ready(() => {
     letterInputs = $('.input-textbox').children().toArray()
 
     $(".letter-input").keyup(function(e) {
-        console.log(e.key)
-        switch (e.keyCode) {
+        console.log(e)
+        let keyCode = e.keyCode == 0 ? e.which : e.keyCode;
+        switch (keyCode) {
             case "ShiftLeft":
             case "ShiftRight":
             case 9:
