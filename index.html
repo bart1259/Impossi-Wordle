@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Impossi-Wordle</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="words.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Impossi-Wordle</h1>
+        <div class="body-wrapper">
+            <p>This game makes Wordle more difficult.</br> 
+                Try to guess the word in as few attempts as possible.</br>
+                All 5 letter Scrabble words are fair game.</br>
+                Refresh to restart the game.</p>
+            <div class="letters">
+            </div>
+            <div class="letter-array input-textbox"> 
+                <input class="letter letter-input" type="text" maxlength="1"/>
+                <input class="letter letter-input" type="text" maxlength="1"/>
+                <input class="letter letter-input" type="text" maxlength="1"/>
+                <input class="letter letter-input" type="text" maxlength="1"/>
+                <input class="letter letter-input" type="text" maxlength="1"/>
+            </div>
+        </div>
+
+        <div class="win-screen" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <p style="font-size: 45px; margin: 10px">You Win!</p>
+            <p class="win-metrics" style="font-size: 20px; margin: 0px">It took you 10 words</p>
+            <button style="background-color: grey; border: none; color:white; 
+            width: 100px; height: 50px; border-radius: 10px; margin: 10px; font-size: 30px;" class="close-win-button">Close</button>
+        </div>
+    </body>
+    <style>
+        * {
+            font-family: "Arial";
+        }
+
+        h1 {
+            text-align: center;
+            justify-content: center;
+            font-size: 72px;
+            margin: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .body-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .letter-input:focus {
+            background-color: rgb(221, 221, 221);
+        }
+
+        .letter {
+            caret-color: transparent;
+            text-transform: uppercase;
+            font-size: 72px;
+            width: 80px;
+            padding: 2px;
+            margin: 6px;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+        }        
+
+
+        .letter-array {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .error {
+            background-color: rgb(245, 129, 129);
+            color: white;
+        }
+
+        .wrong {
+            background-color: rgb(136, 132, 132);
+            color: white;
+        }
+
+        .right {
+            background-color: rgb(129, 245, 139);
+            color: white;
+        }
+
+        .place {
+            background-color: rgb(245, 224, 129);
+            color: white;
+        }
+
+        .win-screen {  
+            position: fixed;
+            z-index: 100;
+            background-color: white;
+            border-radius: 20px;
+            width: 300px;
+            height: 200px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+</html>
