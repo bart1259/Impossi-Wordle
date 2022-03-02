@@ -10,32 +10,33 @@ $(document).ready(() => {
     $(".close-win-button").click(() => {
         $(".win-screen").hide();
     })
-    
+
     letterInputs = $('.input-textbox').children().toArray()
 
     $(".letter-input").keyup(function(e) {
-        switch (e.code) {
+        console.log(e.key)
+        switch (e.keyCode) {
             case "ShiftLeft":
             case "ShiftRight":
-            case "Tab":
+            case 9:
                 break;
-            case "ArrowRight":
+            case 39: // Arrow Right
                 $(this).nextAll(".letter-input:first").focus();
                 break;
-            case "ArrowLeft":
+            case 37: // Arrow Left
                 $(this).prevAll(".letter-input:first").focus();
                 break;
-            case "Backspace":
+            case 8: // Backspace
                 e.target.value = ""
                 $(this).prev(".letter-input").focus();
                 break;
 
-            case "Enter":
+            case 13: // Enter
                 wordSubmitted();
                 break;
 
             default:
-                if(e.code.startsWith("Key")){
+                if(e.key.length == 1 && e.key.match(/[a-z]/i)){
                     e.target.value = e.code.slice(-1)
                     $(this).next('.letter-input').focus();
                 } else {
