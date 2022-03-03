@@ -13,9 +13,9 @@ $(document).ready(() => {
 
     letterInputs = $('.input-textbox').children().toArray()
 
-    $(".letter-input").keypress(function(e) {
+    $(".letter-input").keyup(function(e) {
         let keyCode = e.which;
-        if(keycode == 229 || keycode == 0) {
+        if(keyCode == 229 || keyCode == 0) {
             alert("Oof! Looks like you're using an unsupported keyboard. Computers and IOS devices work best.")
         }
         switch (keyCode) {
