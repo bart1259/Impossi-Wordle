@@ -15,6 +15,9 @@ $(document).ready(() => {
 
     $(".letter-input").keypress(function(e) {
         let keyCode = e.which;
+        if(keycode == 229 || keycode == 0) {
+            alert("Oof! Looks like you're using an unsupported keyboard. Computers and IOS devices work best.")
+        }
         switch (keyCode) {
             case "ShiftLeft":
             case "ShiftRight":
