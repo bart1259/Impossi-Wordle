@@ -14,8 +14,10 @@ $(document).ready(() => {
     letterInputs = $('.input-textbox').children().toArray()
 
     $(".letter-input").keyup(function(e) {
-        console.log(e)
-        let keyCode = e.keyCode == 0 ? e.which : e.keyCode;
+        let keyCode = e.which;
+        if (keyCode == 0 || keyCode == 229) { //for android chrome keycode fix
+            alert("Could not detect input: " + e.keyCode + " " + e.which)
+        }
         switch (keyCode) {
             case "ShiftLeft":
             case "ShiftRight":
@@ -175,6 +177,10 @@ $(document).ready(() => {
     }
 
 });
+
+const getKeyCode = function (str) {
+    return str.charCodeAt(str.length - 1);
+}
 
 const removeValueFromArray = (array, value) => {
     const index = array.indexOf(value);
