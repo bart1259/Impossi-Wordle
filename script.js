@@ -13,7 +13,7 @@ $(document).ready(() => {
 
     letterInputs = $('.input-textbox').children().toArray()
 
-    $(".letter-input").keyup(function(e) {
+    $(".letter-input").keypress(function(e) {
         let keyCode = e.which;
         if (keyCode == 0 || keyCode == 229) { //for android chrome keycode fix
             alert("Could not detect input: " + e.keyCode + " " + e.which)
