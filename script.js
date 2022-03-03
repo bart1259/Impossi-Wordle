@@ -15,9 +15,6 @@ $(document).ready(() => {
 
     $(".letter-input").keypress(function(e) {
         let keyCode = e.which;
-        if (keyCode == 0 || keyCode == 229) { //for android chrome keycode fix
-            alert("Could not detect input: " + e.keyCode + " " + e.which)
-        }
         switch (keyCode) {
             case "ShiftLeft":
             case "ShiftRight":
